@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class PlungerScript : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class PlungerScript : MonoBehaviour
     float minPower = 0f;
     public float maxPower = 100f;
     public Slider powerSlider;
-    List<Rigidbody> ballsList;
+    public List<Rigidbody> ballsList;
     bool ballReady;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,34 +17,45 @@ public class PlungerScript : MonoBehaviour
     {
         powerSlider.minValue = 0f;
         powerSlider.maxValue = maxPower;
-        ballList = new List<Rigidbody>();
+        ballsList = new List<Rigidbody>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ballReady){
+        if (ballReady)
+        {
             powerSlider.gameObject.SetActive(true);
-        } else {
+        }
+        else
+        {
             powerSlider.gameObject.SetActive(false);
         }
         powerSlider.value = power;
-        if(ballList.Count > 0){
+        if (ballsList.Count > 0)
+        {
             ballReady = true;
-            if(Input.GetKey(KeyCode.Space)){
-                if(power <= maxPower){
-                    power+=50*Time.deltaTime;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (power <= maxPower)
+                {
+                    power += 50 * Time.deltaTime;
                 }
             }
 
-            if(Input.GetKeyUp(KeyCode.Space)){
-                if(power <= maxPower){
-                    foreach(Rigidbody r in ballsList){
-                        r.AddForce(power*Vector3.forward);
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                if (power <= maxPower)
+                {
+                    foreach (Rigidbody r in ballsList)
+                    {
+                        r.AddForce(power * Vector3.forward);
                     }
                 }
-            } else {
+            }
+            else
+            {
                 ballReady = false;
                 power = 0f;
             }
@@ -50,12 +63,15 @@ public class PlungerScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")){
-            ballList.Add(other.gameObject.GetComponent<Rigidbody>());
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ballsList.Add(other.gameObject.GetComponent<Rigidbody>());
         }
     }
-    private void OnTriggerExit(Collider other){
-        if (other.gameObject.CompareTag("Player")){
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
             ballsList.Remove(other.gameObject.GetComponent<Rigidbody>());
             power = 0f;
         }
