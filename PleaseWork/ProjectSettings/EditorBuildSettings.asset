@@ -5,15 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/1tpTutorial.unity
     guid: 025bf79fa0166426fa1f73c5a21c6554
   - enabled: 1
-    path: Assets/Scenes/testScene2.unity
+    path: Assets/Scenes/2shrinkTutorial.unity
+    guid: 43917ef50dbef4e50a6831b8e6334a64
+  - enabled: 1
+    path: Assets/Scenes/fadeTutorial.unity
+    guid: 213cc78fcb95b4976b5dcb2e0b64cdda
+  - enabled: 1
+    path: Assets/Scenes/maze.unity
+    guid: dc434aa3d6bd443a797b5a790d4f98b6
+  - enabled: 1
+    path: Assets/Scenes/shrinkHard.unity
     guid: ea6166e35102e4771a87fb9ae95d6377
+  - enabled: 1
+    path: Assets/Scenes/fadeHard.unity
+    guid: f8832de2088ef4a349adfaf7a5f17fde
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
