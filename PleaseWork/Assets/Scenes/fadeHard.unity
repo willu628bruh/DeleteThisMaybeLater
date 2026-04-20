@@ -14876,7 +14876,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -16485,7 +16485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0b1713dbd604eccb839e3628aa39c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  sceneToLoad: maze
+  sceneToLoad: end
 --- !u!136 &2141319196
 CapsuleCollider:
   m_ObjectHideFlags: 0
